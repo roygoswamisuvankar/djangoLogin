@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+    <h1>Signup and login with Django</h1>
+    <div>
+        <div class="signup">
+            <h2>Register your self</h2>
+            {{ sms }}
+            <form action="register" method="post" name="myregister">
+                {% csrf_token %}
+                <!--<input type="hidden" name="id" placeholder="" />-->
+                <input type="text" name="name" placeholder="Enter your name" />
+                <input type="text" name="phone" placeholder="Enter your phone" />
+                <input type="email" name="email" placeholder="Enter your email" />
+                <input type="password" name="pass" placeholder="Enter your password" />
+                <input type="submit" name="signup" value="Save" />
+            </form>
+        </div>
+        <div class="log">
+            <h2>Login into your system</h2>
+            {{ sms1 }}
+            <form action="login" method="post" name="mylogin">
+                {% csrf_token %}
+                <input type="email" name="email" placeholder="Enter email">
+                <input type="password" name="pass" placeholder="Enter password">
+                <input type="submit" value="Login" name="login">
+            </form>
+        </div>
+    </div>
+</body>
+</html>
